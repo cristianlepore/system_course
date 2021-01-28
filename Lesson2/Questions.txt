@@ -1,0 +1,7 @@
+Basic types
+How to define a new type
+Control the control flow
+
+Questions:
+
+1- 

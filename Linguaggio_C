@@ -1,0 +1,116 @@
+Il C è un linguaggio procedurale, rispetto a Java non ci sono le classi. Non ci sono oggetti.
+Le strutture di controllo sono uguali. For, while, if , switch.
+Hello world deriva direttamente dal linguaggio C.
+Come in Java ci sono i metodi statici, in C tutti i metodi sono statici e si chiamano funzioni.
+Le funzioni si dichiarano scrivendo il nome del loro prototipo.
+Anche qui c'è una funzione particolare che viene eseguita all'avvio del programma.
+Però a differenza del Java, nel C questa funzione è in due gusti: semplice e più complessa.
+Questa funzione quando termina restituisce un valore intero, anche qui.
+
+Perchè Main restituisce un valore int?
+Come fa un processo a terminare? Per poter terminare un processo deve invocare una particolare system.call che dice al OS che ha finito di fare quello che doveva. Perchè il OS deve fare una serie di operazioni in system call che l'utente non può fare. Es: il OS da qualche parte tiene traccia di quelli che sono tutti i processi in esecuzione. Se un processo termina ovviamente, le informazioni che il OS teneva di quel processo è inutile che le tenga ancora in memoria.
+
+Quando un processo termina, può farlo in 2 modi:
+1- termina bene --> ha terminato di fare quello che il processo doveva fare.
+2- termina male --> es c'è un baco nel programma e provate ad accedere ad una locazione di memoria a cui non vi è consentito accedere. es. fate una divisione per zero.
+
+Il valore che restituisce la funzione main permette al OS di capire se la terminazione è avvenuta per cause naturali o per morte violenta.
+Si usa una convenzione. Es. se termina con 0 significa per convenzione che il processo è morto per morte naturale, altrimenti se il processo muore per morte anomala la maggior parte delle volte ce ne rendiamo conto da soli. Comunque se abbiamo un numero superiore a zero, significa che il processo è terminato con un errore ed il numero ci fornisce un'indicazione del tipo di errore. Spesso non ci interessa sapere qual'è il valore con cui un processo termina.
+
+E' prassi comune quando si lavora con il terminale scrivere l'equivalente di altri programmi. Es. automatizzano le operazioni del terminale.
+L'interprete del nostro terminale (shell) C è in grado di leggere il contenuto di un file testuale ed interpretarlo come un programma dove ci sono anche strutture di controllo.
+
+Possiamo anche eseguire processi utente.
+Quando scriviamo questi programmi, sapere se sono terminati bene o male, può essere un'informazione rilevante.
+Perchè quando dobbiamo eseguire due programmi subordinati, la possibilità di eseguire il primo è subordinata alla correttezza del secondo. Quini solo se il primo ha restituito zero.
+
+Il compilatore C è più permissivo rispetto al compilatore Java. Es. se proviamo ad accedere ad un elemento di un array e questo non esiste, in Java se la dimensione dell'array è nota staticamente, il compilatore se ne accorge. Il C non è cosi preciso. Es. se assegniamo ad una variabile intera un valore non intero, in Java il compilatore si lamenta, mentre in C no. Perchè il C è pensato per linguaggi a  basso livello. Anche durante l'esecuzione. Stampa solo il messaggio: segmentation fault.
+
+La funzione printf non è un construtto del linguaggio, ma deve essere importata. Come? Con una sintassi: #include <stdio.h>
+
+E' scritto cosi perchè neli anni 70 non avevano molto spazio su disco e risparmiare caratteri faceva la differenza.
+Il fatto che include abbia davanti un cancellatto significa che se ne prende a carico il pre-processore che non fa altro che scandire il testo di un sorgente prima di darlo in pasto al compilatore. In realtà questo pre-processore non fa altro che includere delle librerie e definire delle costanti.
+
+Librerie: <stdio.h> aver usato < e > significa che il file si trova in una particolare directory di sistema e non nella stessa directory del sorgente che vado a scrivere, perchè è una directory standard.
+
+Cosa contiene stdio.h???
+Contiene tanti prototipi di funzione. Es: soltanto int main con il numero corretto di paramentri, etc..
+Come con Java quando dichiariamo una interfaccia. Scriviamo solo l'interstazione del metodo e non il suo corpo.
+
+Cosa succederebbe se io non importassi il file <stdio.h>??
+Il compilatore vede che io sto usando una funzione che non ho mai dichiarato prima, ne importato con una ilbreria. Il compilatore immagina che quella funzione non ha argomenti e restituisce un int, un po' come main. Però io non sto usando printf in quel modo, quindi il compilatore si lamenterà.
+
+Perchè si chiama printf? f sta per formatted
+Questa funzione si occupa di stampare la stringa a video e di mescolare delle stringhe con eventualmente espressioni numeriche o di altro tipo.
+In Java abbiamo la dualità print e printline, invece in C abbiamo solo printf e poi dobbiamo aggiungergi il carattere di a capo.
+\n e \t e \\ sono le più comuni.
+
+Come si compila?
+Esistono tanti compilatori C. Chi ha macchine UNIX e Windows cigWin. Il compilatore è gcc che è il progetto open source di richard stallman da cui è derivato anche Linux.
+gcc nomeSorgente.c 
+Se ci fermiamo qui, la compilazione viene fatta e viene creato un file dal nome a.out
+Se non ci piace avere un file a.out possiamo fare
+gcc -Wall nomeSorgente.c -o nome_da_dare_ad_eseguibile
+Usare opzione -Wall significa attiva dei warning
+
+Questo crea il codice oggetto da eseguire.
+
+Non c'è ancora uno standard per la dichiarazione delle variabili. Alcuni le dichiarano prima (vecchia scuola), altri all'interno del ciclo FOR. Io seguo la vecchia scuola.
+
+L'operatore == ha lo stesso significato che in Java. E' quell'operatore booleano che mi dice se due espressioni sono uguali.
+|| è un or logico come in Java. Niente di nuovo.
+
+Quando nella stringa di formato, cioè il printf c'è un % è un po' come se ci fosse una sequenza di escape. Il % viene ignorato e si legge il carattere successivo e quel carattere viene interpretato in modo particolare. In realtà %d è un segnaposto che indica un punto preciso in cui dovrò stampare il valore di una espressione. Il %d significa che poi vuole una espressione intera che verrà specificata come argomento di printf.
+Quindi printf ha un numero variabile di argomenti. Avrà sempre una stringa di formato che è il primo argomento e poi per ogni segnaposto avrò un numero variabile di espressioni che mi dicono come riempire quel segnaposto.
+
+Ancora una volta il compilatore non si prende la briga di verificare che il numero di argomenti sia compatibile con il numero dei segnaposti.
+
+Se ho un numero diverso di argomenti lo standard ci dice che dobbiamo attenderci un comportamento indefinito poichè non è normata dallo standard del C. significa che il comportamento dipende dalla scelta che il team di informatici ha fatto sviluppando il vostro particolare compilatore C. Comunque niente di buoni.
+
+Il pre-processore può anche dichiarare delle costanti. Con l'istruzione #define. Si chiamano Macro. Per standard si definiscono come nome maiuscolo seguito ddal valore senza punto e virgola.
+Cosa fa il pre-processore quando scandendo un sorgente trova define N 1000
+Fa un trova e sostituisci. Se mettessimo il 1000; allora sostituirebbe N con 1000; anche il punto e virgola, dandoci molti errori.
+
+Se non metto Return 0 il compilatore non si arrabbia.
+
+**************************
+**************************
+
+scanf è la sorella di printf perchè vuole una stringa di formato come printf.
+
+Come funziona scanf?
+Devo specificare il tipo di valore che voglio leggere usando quello che in printf era un segnaposto.
+%d è un segnaposto che vale a dire intero.
+%f è un segnaposto che vale a dire numero con la virgola.
+Però il valore che leggo dalla tastiera dovrò metterlo a qualche parte.
+Per tutta una serie di motivi, scanf non restituisce il valore che ha letto, ma il numero di caratteri che ha letto.
+Per poter andare a memorizzare quello che è stato letto devo usare il & davanti al nome della mia variabile.
+
+Cosa significa &?
+Parliamo di puntatori e riferimenti.
+In Java quando instanziamo una classe o creiamo un oggetto nella JVM viene creato uno spazio per inserire tutte le variabili d'istanza (uno spazio). Come fa il programmatore a far riferimento ad un oggetto?
+Ad un programmatore inesperto scrivere 
+int i = 5; oppure String str = "Hello world" sembra che non ci sia una differenza.
+In realtà la differenza esiste ed è notevole.
+Vediamo la memoria centrale come una cassettiera. Ogni cassetto è una locazione di memoria ed ogni cassetto ha un numero che rappresenta l'indirizzo.
+
+In Java se scrivo int i = 5;    Semplicemente nella memoria viene cercata una locazione libera per poter memorizzare un intero.
+L'effetto di dichiarare una variabile intera è quello di cercare una locazione di memoria libera e da quel momento in poi la leghiamo con un doppio filo al concetto di variabile i. Quindi ogni volta che nel codice trovo i, vado a leggere in quella particolare locazione di memoria. Vale anche che se scrivo sulla variabile i, vado a scrivere in quella locazione di memoria. Una stringa non posso metterla in una sola locazione i memoria ma la macchina cercherà una sequenza di stringhe contigue.
+Nella locazione di memoria memorizzerò l'indirizzo dello heap in cui metto il primo carattere della mia stringa. Cioè è un riferimento. Ovvero un indirizzo della cella di memoria nella quale ho iniziato a memorizzare qualcosa.
+La stringa è memorizzata nello heap, mentre il suo riferimento è nello stack insieme alle variabili. Es. int i è nello stack insieme all'indirizzo della stringa. La stringa vera e propria è nello heap. Indirizzamento diretto nel caso della variabile. Indirizzamento indiretto con la stringa.
+
+In C che cos'è un puntatore? E' quello che in Java viene chiamato un riferimento.
+Quell'operatore &n si chiama in C operatore di referenziazione. E' un operatore unario e l'operando deve essere il nome di una variabile.
+&n restituisce l'indirizzo della cella di memoria a partire dal quale quella variabile è memorizzata. Cioè non passo il valore n, ma l'indirizzo a partire dal quale n è memorizzato.
+& tira fuori il puntatore alla prima cella in cui la variabile è memorizzata.
+
+Un'altro modo di passare i parametri oltre a scanf, è da linea di comando.
+argc --> il numero di elementi passati + 1 perchè il primo è il nome dell'eseguibile.
+char *argc[]
+dove [] come in Java sono utilizzate per gli array.
+* invece ha a che vedere con i puntatori.
+* ha solitamente il significato opposto all'operatore di &
+* da in indirizzo o da un puntatore che dir si voglia, tira fuori la variabile corrispondente.
+
+**************************
+**************************

@@ -1,0 +1,42 @@
+Questions:
+1- Which is more at lower level language between Java and C?
+2- What is C famous for? If you have to develop a system call in the OS, or a network protocol, which language do you chose and why?
+3- If I want to access a memory block, which language would you use?
+4- In which programming language is written the linux kernel?
+5- Does C++ derive from C or from Java?
+6- Suppose I want to write a new OS system call, which language shoul I chose and why? Assembly C, or Java?
+7- Where was the C programming languages invented?
+8- Lisp --> directed for artifivial intelligence.
+9- What was the idea behind the C programming languages? --> They wanted an OS that could work with different harware platform. So unix work with different hardware platforms --> big innovation of UNIX. So you can compile the same source code for different architectures.
+10- C is a compile language or it is interpreted language? What is the main advantage of a compiled language? Speed
+11- C is compiled and has a compiled for each architecture (Intel, ARM, etc...)
+12- Which is more secure between Java and C?
+13- Tell me some of the advantages of C --> direct access to OS primitives with the system calls. And performances because it is a compiled program.
+14- Disadvantages of C --> more prone to create disasters because you have access to the operating system and error may be more difficult to discover.
+15- What are some of the responsabilities that come with C programming?
+- Memory management responsability
+- Explicit initialization and error detection
+- Generally, more lines for the same functionality
+- More room for mistakes
+16- Differences between Java and C? Image1. C is more fragile.
+17- What happen if you pass an object to a function in C? The variable represent an object represent a pointer.
+18- If I want to define an array in C and in Java, what is the different? image2.
+19- Which is the starting point of a function in C? The main Function. When I invoke the program, I invoke the main function.
+20- What is the meaning of the #include instruction on the first line?
+21- What does this command mean when is inside a print function?
+22- What does return 0  means?
+23- Return 0 -- means all right
+24- How do you write the comment?
+25- What does ARGC mean? --> it is a cout of parameter to pass to the program
+26- What does char *ARGV[] mean? --> it is a pointer to a vector. it is an array of string.
+27- What is the int value of int main?
+28- Which comman can I use instead of return 0? --> exit(0)
+29- Do you know the difference between interpreted language and compile langauge? Any example?
+30- Is Java an interpreted or a compiled language?
+31- What is the name of the C compiler? --> GNU
+32- Can I compile C code into linux and windows as well?
+33- How do you compile? --> gcc [name.c] -o a.out
+34- How do you show the warnings when compiling? --> -Wall
+35- Wat happen if I do not initilize a variable? --> initialized to 0 
+36- How can I define a MACRO? #define MAXVALUE 100
+37- Do you remember the meaning of the error 'segmentation fault'?
