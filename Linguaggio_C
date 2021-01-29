@@ -115,3 +115,76 @@ dove [] come in Java sono utilizzate per gli array.
 **************************
 **************************
 
+E' importante che voi scriviate il codice con le vostre mani per predere confidenza con gli errori che sputa fuori il terminale.
+
+printf e scanf fanno l'output formattato. Cioè io prendo il mio testo formattato che contiene caratteri e dei segnaposto. L'alternativa è quella di leggere l'input e stampare l'output carattere per carattere.
+Le funzioni che fanno questo si chiamano getchar e putchar.
+
+getchar() --> è una funzione che non vuole argomenti e restituisce il carattere letto.
+int c;
+getchar(c)
+Posso mettere getchar in un intero perchè alla fine un carattere sotto sotto è memorizzato come intero e c'è una tabella di conversione tra caratteri ed interi. Questa tabella di conversione è quella dello standard ASCII.
+getchar() blocca l'esecuzione in attesa che premiamo un tasto. Il codice ASCII del carattere corrispondete viene restituito a getchar ed assegnato alla variabile C.
+
+putchar(c) invece vuole un argomento e sputa fuori un carattere, non un intero o altro.
+
+Quando usiamo getchar o putchar, avremo anche EOF. Perchè un file EOF?
+Perchè in C la lettura e scrittura da standar input o output altro non è che la lettura o scrittura su un file. Niente di nuovo.
+EOF --> significa ho terminato di inserire l'input.
+
+In realtà i caratteri in C vengono trattati come interi, quindi potrei passare un intero come parametro di una fuinzione e poi all'interno della funzione trattarlo come carattere o sostituire al carattere il suo equivalente ASCII.
+
+Un terzo modo per leggere o scrivere stringhe è puts o gets. Questi metodi però funzionano solo con stringhe ben formattate. Quindi quando le uso devo essere sicuro di conoscere l'intera stringa.
+
+Parliamo degli Array.
+Gli array in C sono come in Java, con la sola differenza che in Java c'è un supporto nel supporto degli errori nel momento in cui sto cercano di accedere ad una locazione i memoria che non esiste. Questo in C non esiste.
+Dichiaro un array int a[] = {1, 6, 9, 3}; e non mi preoccupo di dire quanto è grande perchè in questo caso contestualmente alla dichiarazione, mi sono anche preoccupato di dire quanto è grande. Se non lo avessi dichiarato e contestualizzato, allora avrei dovuto anche dare la dimensione dell'array.
+
+C'è una differenza tra gli array in Java e gli array in C. In Java gli array sono essenzialmente degli ogetti. Per esempio posso in Java posso scrivere il nome dell'array seguita dal punto e qualcosa per accedere all'elemento dell'array.
+
+In C questo non si può fare. Quindi se vogliamo passare un array come parametro di una funzione, dobbiamo anche passargli un secondo parametro che mi dice quanto è lungo l'array.
+Perchè devo specificare la lunghezza di un arrey quando passo l'array come parametro di una funzione?
+Qui entrano in gioco i puntatori. Normalmente un puntatore viene interpretato come l'indirizzo di una cella di memoria a partire dalla quale viene memorizzata una variabile.
+Dichiaro un puntatore cosi: int *p;
+Però * assume significati diversi a seconda che io stia dichiarando un puntatore o usandolo.
+Un puntatore lo interpreto come un indirizzo a partire dal quale è memorizzata una variabile.
+p = 42 significa andare a leggere o scrivere nella locazione di memoria con indirizzo 42.
+Questo indirizzo è gestito dal OS e per noi è trasparente.
+
+Dobbiamo quindi assegnare dei valori ai puntatori in modo indiretto.
+Se volessi far puntare il puntatore *p alla variabile i userei
+int i;
+int *p;
+p = &i;
+Questo significa dammi l'indirizzo di i e mettilo nel puntatore p.
+
+In C per poter leggere il valore di i a partire dal puntatore p devo usare l'operatore di deferenziazione *p. Ecco quindi il secondo utilizzo di *, cioè come operatore di deferenziazione.
+Quindi per stampare o lavorare con il puntatore dopo, mi basterà dereferenziarlo con *p. *p lo potrei usare in tutti i contesti in cui utilizzo una variabile.
+N.B. --> nel passaggio dei parametri con una funzione, le variabili vengono passate come valore, invece gli array vengono passati come puntatori. Infatti un array ha una lunghezza varibile e non viene passata come valore, ma solo come puntatore.
+Potrei infatti cambiare la dichiarazione (o prototipo) della funzione da: a[] con *a
+Perchè quando viene passato un array, non passo il suo valore, ma piuttosto un puntatore alla cella a partire dal quale è memorizzato l'array.
+All'interno della funzione a[i] viene trattato come un puntatore, ovvero mi dice di andare alla locazione a[0] e poi sfrutta l'aritmetica dei puntatori per muoversi tra le celle.
+
+**************************
+**************************
+
+Aritmetica dei puntatori:
+Prendiamo un'altro esempio
+Se scrivo:
+int a[] = {19, 23, 3}; --> dichiaro un array
+int *p = a; --> qui non ho bisogno di mettere l'operatore di & davanti ad a.
+Infatti ogni volta che dichiaro un arrai, poi lo posso chiamare solo con a, ed è sottointeso che abbia l'operatore & davanti.
+
+A quel punto scrivere p[0] oppure a[0] sarà la stessa cosa.
+Ovvero vado a prendere il puntatore p, leggo il suo contenuto. Il contenuto sarà l'indirizzo di memoria di dove inizia il puntatore a. Vado nella prima cella dell'array a e leggo il contenuto.
+Se scrivessi p[1] andrei a prendere il contenuto del puntatore p. Il contenuto è l'indirizzo di memoria di dove inizia il puntatore a. Vado nella prima cella dell'array ed incremento di 1. Il valore che leggo è il mio valore.
+Quindi p[1] = a[1]
+in generale p[i] = a[i]
+*a = 0; --> equivalente ad a[0] = 0;
+(a+1) = 0; --> equivalente ad a[1] = 0;
+Ovvero se uso il + ed uno dei suoi argomenti è un puntatore, ottengo un puntatore.
+*(a+1);
+
+Quando ha senso usare l'aritmetica dei puntatori?
+Nel caso delle stringhe.
+minuto 14:40

@@ -13,7 +13,7 @@ int max(int a[], int n){
 
 int main(){
     int a[] = {1, 6, 9, 3};
-    int m = max(a, 4);w
+    int m = max(a, 4);
 
     printf("The max value is: %d", m);
 
