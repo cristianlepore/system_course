@@ -185,6 +185,10 @@ in generale p[i] = a[i]
 Ovvero se uso il + ed uno dei suoi argomenti è un puntatore, ottengo un puntatore.
 *(a+1);
 
+Quindi in C gli array vengono passati come puntatori. Se modifico l'array nel main, lo modificherò anche nella funzione che ho chiamato.
+
 Quando ha senso usare l'aritmetica dei puntatori?
-Nel caso delle stringhe.
-minuto 14:40
+Nel caso delle stringhe. Infatti in C le stringhe sono degli array di caratteri.
+In C per convenzione le stringhe sono degli array di caratteri in cui non ho bisogno di specificarne la lunghezza perchè dopo l'ultimo carattere di una stringa ho un carattere particolare che ha codice ASCII 0. Il compilatore saprà che la stringa terminerà quando si trova codice ASCII zero.
+
+Con s++ mi muovo tra gli elementi della stringa fino a raggiungere il carattere di terminazione.
