@@ -1,7 +1,11 @@
-Basic types
-How to define a new type
-Control the control flow
-
-Questions:
-
-1- 
+- In C you build compiler for a specific architecture (OS or computer). In Java we have the JVM.
+- Can the type 'char' be interpreted as a number?
+- What is the range of char and how many bytes do they require in a normal architecture?
+- What is the range of int and how many bytes do they require in a normal architecture?
+- What happen if you type the line: printf("%d", 'a');? and why?
+- How does the scanf work?
+- Difference between implicit and explicit casting.
+- Does C has boolean numbers?
+- Enumerated types.
+- Data struncture: array[]? Explain.
+- 
