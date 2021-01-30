@@ -8,4 +8,14 @@
 - Does C has boolean numbers?
 - Enumerated types.
 - Data struncture: array[]? Explain.
-- 
+- Struct and Union
+- Is C an object oriented language?
+- How can I declare a variable?
+- What is the & operator?
+- What is the meaning of Wall when used in the command line?
+- How can you write a for code?
+- Switch statement - What is the meaning of the break instruction?
+- Switch statement - what happen if I do not use the break instuction?
+- How many statement do you know? While, do-while, for
+- Meaning of the continue instruction.
+- What does it mean if I use a break instruction inside a for loop?
