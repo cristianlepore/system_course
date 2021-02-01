@@ -22,14 +22,14 @@ L'interprete del nostro terminale (shell) C è in grado di leggere il contenuto 
 
 Possiamo anche eseguire processi utente.
 Quando scriviamo questi programmi, sapere se sono terminati bene o male, può essere un'informazione rilevante.
-Perchè quando dobbiamo eseguire due programmi subordinati, la possibilità di eseguire il primo è subordinata alla correttezza del secondo. Quini solo se il primo ha restituito zero.
+Perchè quando dobbiamo eseguire due programmi subordinati, la possibilità di eseguire il primo è subordinata alla correttezza del secondo. Quindi solo se il primo ha restituito zero.
 
-Il compilatore C è più permissivo rispetto al compilatore Java. Es. se proviamo ad accedere ad un elemento di un array e questo non esiste, in Java se la dimensione dell'array è nota staticamente, il compilatore se ne accorge. Il C non è cosi preciso. Es. se assegniamo ad una variabile intera un valore non intero, in Java il compilatore si lamenta, mentre in C no. Perchè il C è pensato per linguaggi a  basso livello. Anche durante l'esecuzione. Stampa solo il messaggio: segmentation fault.
+Il compilatore C è più permissivo rispetto al compilatore Java. Es. se proviamo ad accedere ad un elemento di un array e questo non esiste, in Java se la dimensione dell'array è nota staticamente, il compilatore se ne accorge. Il C non è cosi preciso. Es. se assegniamo ad una variabile intera un valore non intero, in Java il compilatore si lamenta, mentre in C no. Perchè il C è pensato per linguaggi a basso livello. Anche durante l'esecuzione. Stampa solo il messaggio: segmentation fault.
 
 La funzione printf non è un construtto del linguaggio, ma deve essere importata. Come? Con una sintassi: #include <stdio.h>
 
 E' scritto cosi perchè neli anni 70 non avevano molto spazio su disco e risparmiare caratteri faceva la differenza.
-Il fatto che include abbia davanti un cancellatto significa che se ne prende a carico il pre-processore che non fa altro che scandire il testo di un sorgente prima di darlo in pasto al compilatore. In realtà questo pre-processore non fa altro che includere delle librerie e definire delle costanti.
+Il fatto che include abbia davanti un cancelletto significa che se ne prende a carico il pre-processore che non fa altro che scandire il testo di un sorgente prima di darlo in pasto al compilatore. In realtà questo pre-processore non fa altro che includere delle librerie e definire delle costanti.
 
 Librerie: <stdio.h> aver usato < e > significa che il file si trova in una particolare directory di sistema e non nella stessa directory del sorgente che vado a scrivere, perchè è una directory standard.
 
@@ -38,7 +38,7 @@ Contiene tanti prototipi di funzione. Es: soltanto int main con il numero corret
 Come con Java quando dichiariamo una interfaccia. Scriviamo solo l'interstazione del metodo e non il suo corpo.
 
 Cosa succederebbe se io non importassi il file <stdio.h>??
-Il compilatore vede che io sto usando una funzione che non ho mai dichiarato prima, ne importato con una ilbreria. Il compilatore immagina che quella funzione non ha argomenti e restituisce un int, un po' come main. Però io non sto usando printf in quel modo, quindi il compilatore si lamenterà.
+Il compilatore vede che io sto usando una funzione che non ho mai dichiarato prima, ne importato con una libreria. Il compilatore immagina che quella funzione non ha argomenti e restituisce un int, un po' come main. Però io non sto usando printf in quel modo, quindi il compilatore si lamenterà.
 
 Perchè si chiama printf? f sta per formatted
 Questa funzione si occupa di stampare la stringa a video e di mescolare delle stringhe con eventualmente espressioni numeriche o di altro tipo.
@@ -67,7 +67,7 @@ Ancora una volta il compilatore non si prende la briga di verificare che il nume
 
 Se ho un numero diverso di argomenti lo standard ci dice che dobbiamo attenderci un comportamento indefinito poichè non è normata dallo standard del C. significa che il comportamento dipende dalla scelta che il team di informatici ha fatto sviluppando il vostro particolare compilatore C. Comunque niente di buoni.
 
-Il pre-processore può anche dichiarare delle costanti. Con l'istruzione #define. Si chiamano Macro. Per standard si definiscono come nome maiuscolo seguito ddal valore senza punto e virgola.
+Il pre-processore può anche dichiarare delle costanti. Con l'istruzione #define. Si chiamano Macro. Per standard si definiscono come nome maiuscolo seguito dal valore senza punto e virgola.
 Cosa fa il pre-processore quando scandendo un sorgente trova define N 1000
 Fa un trova e sostituisci. Se mettessimo il 1000; allora sostituirebbe N con 1000; anche il punto e virgola, dandoci molti errori.
 
@@ -82,7 +82,7 @@ Come funziona scanf?
 Devo specificare il tipo di valore che voglio leggere usando quello che in printf era un segnaposto.
 %d è un segnaposto che vale a dire intero.
 %f è un segnaposto che vale a dire numero con la virgola.
-Però il valore che leggo dalla tastiera dovrò metterlo a qualche parte.
+Però il valore che leggo dalla tastiera dovrò metterlo da qualche parte.
 Per tutta una serie di motivi, scanf non restituisce il valore che ha letto, ma il numero di caratteri che ha letto.
 Per poter andare a memorizzare quello che è stato letto devo usare il & davanti al nome della mia variabile.
 
@@ -95,7 +95,7 @@ In realtà la differenza esiste ed è notevole.
 Vediamo la memoria centrale come una cassettiera. Ogni cassetto è una locazione di memoria ed ogni cassetto ha un numero che rappresenta l'indirizzo.
 
 In Java se scrivo int i = 5;    Semplicemente nella memoria viene cercata una locazione libera per poter memorizzare un intero.
-L'effetto di dichiarare una variabile intera è quello di cercare una locazione di memoria libera e da quel momento in poi la leghiamo con un doppio filo al concetto di variabile i. Quindi ogni volta che nel codice trovo i, vado a leggere in quella particolare locazione di memoria. Vale anche che se scrivo sulla variabile i, vado a scrivere in quella locazione di memoria. Una stringa non posso metterla in una sola locazione i memoria ma la macchina cercherà una sequenza di stringhe contigue.
+L'effetto di dichiarare una variabile intera è quello di cercare una locazione di memoria libera e da quel momento in poi la leghiamo con un doppio filo al concetto di variabile i. Quindi ogni volta che nel codice trovo i, vado a leggere in quella particolare locazione di memoria. Vale anche che se scrivo sulla variabile i, vado a scrivere in quella locazione di memoria. Una stringa non posso metterla in una sola locazione di memoria ma la macchina cercherà una sequenza di stringhe contigue.
 Nella locazione di memoria memorizzerò l'indirizzo dello heap in cui metto il primo carattere della mia stringa. Cioè è un riferimento. Ovvero un indirizzo della cella di memoria nella quale ho iniziato a memorizzare qualcosa.
 La stringa è memorizzata nello heap, mentre il suo riferimento è nello stack insieme alle variabili. Es. int i è nello stack insieme all'indirizzo della stringa. La stringa vera e propria è nello heap. Indirizzamento diretto nel caso della variabile. Indirizzamento indiretto con la stringa.
 
@@ -106,7 +106,7 @@ Quell'operatore &n si chiama in C operatore di referenziazione. E' un operatore 
 
 Un'altro modo di passare i parametri oltre a scanf, è da linea di comando.
 argc --> il numero di elementi passati + 1 perchè il primo è il nome dell'eseguibile.
-char *argc[]
+char *argv[]
 dove [] come in Java sono utilizzate per gli array.
 * invece ha a che vedere con i puntatori.
 * ha solitamente il significato opposto all'operatore di &

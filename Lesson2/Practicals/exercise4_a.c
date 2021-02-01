@@ -16,7 +16,7 @@ int	main(){
     }	
     
     num_copy = num;	    // save the original number again
-    printf("Digits of given number are: ");
+    printf("Reverse: ");
     
     // Divide (integer division!) by 10^(count-­‐1) to get the	
     // count-­‐th left digit, i.e 123/100 = 1
