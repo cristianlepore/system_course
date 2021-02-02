@@ -122,7 +122,7 @@ Le funzioni che fanno questo si chiamano getchar e putchar.
 
 getchar() --> è una funzione che non vuole argomenti e restituisce il carattere letto.
 int c;
-getchar(c)
+getchar()
 Posso mettere getchar in un intero perchè alla fine un carattere sotto sotto è memorizzato come intero e c'è una tabella di conversione tra caratteri ed interi. Questa tabella di conversione è quella dello standard ASCII.
 getchar() blocca l'esecuzione in attesa che premiamo un tasto. Il codice ASCII del carattere corrispondete viene restituito a getchar ed assegnato alla variabile C.
 
