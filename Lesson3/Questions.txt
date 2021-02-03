@@ -1,0 +1,44 @@
+- How the printf function is constructed? Can you give me an example?
+- Meaning of this letter % in %d --> conversion specifications
+- What does this string mean? printf("%d, %f \n", i, j);
+- What happen if you have one placeholder and two variable? printf("%d", i, j);
+- Which compiler is more permissive? Java or C? Why?
+- What is the result of this instruction?
+    char i, x;
+    printf("%f %d\n", i, x);
+
+- What is the general format of conversion specifications?
+- conversion specification: %8.2f or %.4f ??
+- What happen if I do: printf("%10d", 112); ??? How wil be the output formatted?
+- What are the conversion specification that you know?
+    f --> fixed decimal, indicates how many digits will appear after the decimal point --> by default are 6 digits
+    e --> exponential
+    g --> either exponential format or decimal format
+- What is the difference between
+    int x = 20;
+    printf("%d %7d %-7d", x, x, x);
+- What is the meaning of this:
+    printf("%10.3f | %10.3e", num, num);
+- Escape sequence:
+    \a --> alert bell
+    \b --> backspace
+    \n --> new line
+    \t --> tabulation
+- Escape sequence printf("\"Hello World\"") What does this print?
+
+- Scanf --> explain the Scanf function
+- Can I have many white spaces when I type the variable in scanf? Can I have tabulation or vertical spaces? --> Yes
+- How this string will be read?
+    1-20.3-4.0e3¤ 
+    scanf("%d%d%f%f", &i, &j, &x, &y);
+    Result:
+        > %d. Stores 1 into i and puts the - character back. 
+        > %d. Stores –20 into j and puts the . character back. 
+        > %f. Stores 0.3 into x and puts the - character back.  
+        > %f. Stores –4.0 × 10^3 into y and puts the new-line character back.
+- What is the difference between:
+    > scanf("%d/%d", x, i); /* if I type: •5•/•96 or •5/•96
+    > which one is correct?
+- How do you interpret this?
+    scanf("%d, %d", x, i);  /* There is a comma between the two %d */
+- Show me the exercise addFrac.c that we did in the lecture.
