@@ -42,3 +42,5 @@
 - How do you interpret this?
     scanf("%d, %d", x, i);  /* There is a comma between the two %d */
 - Show me the exercise addFrac.c that we did in the lecture.
+- There is a typo in the program. Can you find where?
+- How would you fix the mistake

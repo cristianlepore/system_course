@@ -12,7 +12,7 @@ int main(){
     int num = (num1 * den2) + (num2 * den1);
     int denom = den1 * den2;
 
-    printf("The sum is %d/%d", num, denom);   
+    printf("The sum is %d/%d\n", num, denom);   
 
     return 0;
 }
