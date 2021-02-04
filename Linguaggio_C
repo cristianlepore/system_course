@@ -129,10 +129,10 @@ getchar() blocca l'esecuzione in attesa che premiamo un tasto. Il codice ASCII d
 putchar(c) invece vuole un argomento e sputa fuori un carattere, non un intero o altro.
 
 Quando usiamo getchar o putchar, avremo anche EOF. Perchè un file EOF?
-Perchè in C la lettura e scrittura da standar input o output altro non è che la lettura o scrittura su un file. Niente di nuovo.
+Perchè in C la lettura e scrittura da standard input o output altro non è che la lettura o scrittura su un file. Niente di nuovo.
 EOF --> significa ho terminato di inserire l'input.
 
-In realtà i caratteri in C vengono trattati come interi, quindi potrei passare un intero come parametro di una fuinzione e poi all'interno della funzione trattarlo come carattere o sostituire al carattere il suo equivalente ASCII.
+In realtà i caratteri in C vengono trattati come interi, quindi potrei passare un intero come parametro di una funzione e poi all'interno della funzione trattarlo come carattere o sostituire al carattere il suo equivalente ASCII.
 
 Un terzo modo per leggere o scrivere stringhe è puts o gets. Questi metodi però funzionano solo con stringhe ben formattate. Quindi quando le uso devo essere sicuro di conoscere l'intera stringa.
 
