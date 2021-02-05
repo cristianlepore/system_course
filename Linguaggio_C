@@ -126,7 +126,7 @@ getchar()
 Posso mettere getchar in un intero perchè alla fine un carattere sotto sotto è memorizzato come intero e c'è una tabella di conversione tra caratteri ed interi. Questa tabella di conversione è quella dello standard ASCII.
 getchar() blocca l'esecuzione in attesa che premiamo un tasto. Il codice ASCII del carattere corrispondete viene restituito a getchar ed assegnato alla variabile C.
 
-putchar(c) invece vuole un argomento e sputa fuori un carattere, non un intero o altro.
+putchar(c) invece vuole un argomento e sputa fuori un carattere, non un intero o altro. Possiamo anche passargli un intero ma putchar ritornerà sempre in char.
 
 Quando usiamo getchar o putchar, avremo anche EOF. Perchè un file EOF?
 Perchè in C la lettura e scrittura da standard input o output altro non è che la lettura o scrittura su un file. Niente di nuovo.
@@ -137,7 +137,7 @@ In realtà i caratteri in C vengono trattati come interi, quindi potrei passare 
 Un terzo modo per leggere o scrivere stringhe è puts o gets. Questi metodi però funzionano solo con stringhe ben formattate. Quindi quando le uso devo essere sicuro di conoscere l'intera stringa.
 
 Parliamo degli Array.
-Gli array in C sono come in Java, con la sola differenza che in Java c'è un supporto nel supporto degli errori nel momento in cui sto cercano di accedere ad una locazione i memoria che non esiste. Questo in C non esiste.
+Gli array in C sono come in Java, con la sola differenza che in Java c'è un supporto nel supporto degli errori nel momento in cui sto cercano di accedere ad una locazione di memoria che non esiste. Questo in C non esiste.
 Dichiaro un array int a[] = {1, 6, 9, 3}; e non mi preoccupo di dire quanto è grande perchè in questo caso contestualmente alla dichiarazione, mi sono anche preoccupato di dire quanto è grande. Se non lo avessi dichiarato e contestualizzato, allora avrei dovuto anche dare la dimensione dell'array.
 
 C'è una differenza tra gli array in Java e gli array in C. In Java gli array sono essenzialmente degli ogetti. Per esempio posso in Java posso scrivere il nome dell'array seguita dal punto e qualcosa per accedere all'elemento dell'array.

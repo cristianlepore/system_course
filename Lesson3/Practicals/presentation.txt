@@ -1,0 +1,132 @@
+Welcome everbody to this third session of the lab activity.
+
+******************************
+
+My plan for today is similar to the previous week. I have settled 15 minutes presentation then we have 10 minutes for questions and answers. Eventually, these 10 minutes can be allocated to prepare your laptop for the next activity that is exercises & checkpoints where you have the opportunity to earn your checkpoint. I have allocated 35 minutes for this last activity.
+
+******************************
+
+From the last week, we have seen how the main function is composed. In particular, I have presented the two ways of declaring the main function. The easiest way is - int main followe by parenthesis. We have also studied the main function with the argc and argv arguments.
+
+We studied the compiler. The gcc compiler passing the -Wall argument. Remember that -Wall allows you to show all warnings for your program.
+
+We have seen an example of a first Hello World program.
+
+Finally, we spent a few time describing the printf and scanf functions as well.
+
+******************************
+
+The last week I did a quite long presentation. Today I want to keep it a bit shorter because I want to give you more time for exercises.
+
+So, I have prepared only two arguments: 
+the first is a further overview of the standard input output with the getchar and putchar functions
+the second is about arrays
+
+******************************
+
+So, before starting I want to share this concern with you. It is quite clear but is always useful to remind.
+Every time you want to learn a new programming language, the best way to do so, is by practicing. Stuying on the book is important but it is as important as writing the code by yourself. So, try to write the code and try to get more confident with the errors that the compiler provides.
+
+******************************
+
+An alternative way to call the printf and scanf functions is to read and write by using getchar and putchar.
+
+Let's have a look at getchar first.
+getchar is a function that does not have any argument.
+We just need to write getchar parenthesis and it returns the character read from the standard input - typically from our keyboard.
+
+Because it is a function declared in the standard library, we need to import the stdio.h library that we are all familiar with.
+
+******************************
+
+getchar reads the character from the standards input. 
+Basically, the compiler halt the program execution, waiting for an input which in this case will be from keyboard.
+
+In this example, I have typed the letter 'a', I've stored the letter in a variable C and then I can print its value on screen by using printf as usual along with the placeholder %c which stands for print the first character.
+So, my output will be A as espected.
+
+******************************
+
+I can also wrap getchar into an integer, as in this second case. There is no surprise here, because since the last lesson, we should have the idea at this point that both characters and strings, are treated in C as integers.
+
+I can store my character as an integer value while use it as a normal char.
+the ASCII table will give us a clue of the convertion.
+
+So, this a question for you guys. If I type A, and I store the result into an integer variable. When I call the printf function with %c as placeholder, what will be the aspected output? do you have any idea?
+
+******************************
+
+The output will be the letter A
+because as I said, every character is stored as an integer value and here I have printed the character as %c.
+
+******************************
+
+in this case instead, the output will be the integer corresponding to the letter A. Hence, will be the number 97.
+In fact, here I am forcing the compiler to print the integer value by using %d in the printf function.
+
+this also means that I could pass an integer as parameter to a function and treat it as a char by substituting its integer value with the corresponding ASCII letter.
+
+ok? Do we all agree with this?
+...
+awesome
+
+******************************
+
+the function putchar instead, requires an argument and print out a character.
+we can also pass an integer value to this function, but as aspected, it will always return a char.
+
+nothing more to say about this function. It is pretty straight forward. You can try it by yourself.
+
+When we use getchar and putchar there is an EOF character that must be read.
+What is the OEF?
+In C reading and writing from standard i/o is the same as reading and writing from a file.
+This means, typing on a keyboard, we are simply writing on a file. By reading a value though, we are reading from a file. Nothing new, right?
+
+EOF means that we have finished to read from command line.
+
+******************************
+
+Actually there is a third way to read and write strings, which uses puts and gets.
+
+By the way, these only work with well formatted strings. So, if we decide to use them, we need to know the whole string.
+
+Here you see an example of puts in action.
+I have declared a string and we type on screen the string Hello World. 
+Easy.
+
+******************************
+
+For gets the situation is a bit different. Firstly because the gets function is deprecated. It has been swapped by the fgets function
+
+the fgets requires three arguments. 
+The first is the name of our string
+The second is the size of the string.
+The third is the standard input stream. Typically this is the shell. but it could also be the name of the file we read from.
+
+******************************
+
+Let's talk about arrays.
+
+Arrays in C are similar to Java. There is only one difference. In Java, there is more control when you access a memory location that does not exist.
+
+We can declare arrays in two ways: 
+- we can declare the array and initialize it at the same time. In line 4 for eample, we do not specify the length of the array. The lenght is implicit by declaring its elements.
+- or we can declare an array by defining its length.
+
+you can see both on line 4 and 5.
+
+******************************
+
+An element is accessed by indexing the array name. This is done by placing the index of the element within square brackets after the name of the array.
+
+In this way we can assign a value to an array element.
+
+The above statement assigns the 5th element in the array with a value of 50.0.
+
+******************************
+
+We can also initialize elments of an array by using a for loop.
+
+******************************
+
+Next lesson I am going to give you an overview of the main control flow structures and we are going to see how to declare functions and pass parameters to a function.
