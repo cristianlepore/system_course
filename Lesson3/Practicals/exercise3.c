@@ -39,10 +39,10 @@ void mult(){
 }
 
 int main(){
-    char ch;
+    char ch = '\0';
 
     printf("Enter a letter:");
-    scanf("%c", &ch);
+    scanf("%", &ch);
 
     if(ch == 'a')
         add();

@@ -9,7 +9,13 @@
 
 - What is the general format of conversion specifications?
 - conversion specification: %8.2f or %.4f ??
-- What happen if I do: printf("%10d", 112); ??? How wil be the output formatted?
+    example 
+    n=1.9890778;
+    then printf("%6.2f",n); will print 1.98
+    n=7687.87686;
+    then it will print 7687.87
+
+- What happen if I do: printf("%10d", 112); ??? How will be the output formatted?
 - What are the conversion specification that you know?
     f --> fixed decimal, indicates how many digits will appear after the decimal point --> by default are 6 digits
     e --> exponential
@@ -37,10 +43,10 @@
         > %f. Stores 0.3 into x and puts the - character back.  
         > %f. Stores –4.0 × 10^3 into y and puts the new-line character back.
 - What is the difference between:
-    > scanf("%d/%d", x, i); /* if I type: •5•/•96 or •5/•96
+    > scanf("%d/%d", &x, &i); /* if I type: •5•/•96 or •5/•96
     > which one is correct?
 - How do you interpret this?
-    scanf("%d, %d", x, i);  /* There is a comma between the two %d */
+    scanf("%d, %d", &x, &i);  /* There is a comma between the two %d */
 - Show me the exercise addFrac.c that we did in the lecture.
 - There is a typo in the program. Can you find where?
 - How would you fix the mistake
