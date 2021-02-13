@@ -1,0 +1,57 @@
+- explain what putchar is
+- can putchar write more than character or one single char?
+- explain the function getchar
+- does getchar return an integer or a string/char? It returns an integer
+- which is more efficient? scanf or getchar/putchar?
+- what is the disadvantage of getchar? The input keeps buffering till enter is pressed.
+- can getchar read more than one character at a time? No, it can't
+- tell me difference between scanf and getchar
+- What is a potential problem in this example??
+    printf("Enter an integer: ");
+    scanf("%d", &i);
+    printf("Enter a command: ");
+    command = getchar();
+
+    N.B. --> The scanf leave behind any characters that weren't consumed uring the reading of i. Hence, getchar will fetch the first leftover character.
+
+- Does C has boolean type?
+- How can I declare a boolean in C?
+- How many ways do you know to define a bool? #define and typedef
+- What is an advantage of defining a typedef? You can easily redefine the type by simply changing the fist line.
+- Using typedef is also good for portability.
+    e.g. int or char can be defined differently in several machines. Transporting the program to a machine with shorter integers, we will change the type definition. changing the definition may affect the way variables are used.
+- The same problem as above does not apply to Java. Why?
+    Because the types are implemented into the JVM and it is the same in all architectures.
+- sizeof function? It returns an unsigned integer representing the number of bytes required to store a value belonging to type-name
+    sizeof(char)  or   sizeof(int)
+- sizeof can also be applied to constants, variables, and expressions in general.
+    sizeof(i+j)
+
+******************************
+Arrays
+- How do we initialize an array?
+    int a[5] = {10, 3, 32, 7, 23};
+    int a[9] = {0}; /* Initialize to all zeroes. */
+- What does this mean?
+    int a[15] = {[2] = 29, [9] = 7, [14] = 48};
+- how do we call this [2] ??? --> designator
+- How can we design a program to write the repeated digit?
+- meaning of sizeof();
+- What is the meaning of this instruction?
+    sizeof(a) / sizeof(a[0]) --> returns the length of an array
+        where a is an Arrays
+- sizeof returns a value that is size_t which is defined in a suitable header file --> size_t is an unsigned integer
+- How can I define a multidimensional array?
+    int m[5][9];
+- how can I access to the element in position j, i?
+    m[j][i]
+- how can I select an entire row?
+    m[j] --> select row J
+- I can declare an identity matrix like:
+    double ident[2][2] = {[0][0] = 1.0, [1][1] = 1.0};
+- How does the keywork const mean?
+- How can I generate a random number?
+- What is the meaning of srand?
+- What's the meaning of the time function?
+- What's the meaning of this instruction? srand(time(NULL));
+- 
