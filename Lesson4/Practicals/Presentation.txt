@@ -1,0 +1,116 @@
+Welcome everbody, welcome to this fourth session of the lab activity.
+
+******************************
+
+As usual our plan for today includes a 10-15 minutes presentation, then about 10 minutes for questions and answers and then the ramaining 35 minutes for exercises & checkpoints. Please be ready to share your screen because it is important that we are all able to compile the code and write some easy programs, since from the next practical, better to say in two weeks from now, we are going to discuss more elaborated structures such as functions and pointers. So, it's important that we have a clear understanding of the topic studied so far.
+
+******************************
+
+A brief summary of week 2 and week 3. 
+In week two, we studied the Main function. We presented the two ways of declaring the main function. So, with int main followed by parenthesis. We have also studied the main function with argc and argv arguments. Argc stands for argument counter and Argv is an array of pointers.
+
+We studied how we can compile a simple Hello World program.
+
+We reviewed the practicals watching closely at some examples.
+
+Finally, we spent a few time describing the I/O standard with printf and scanf.
+
+In week 3, we reviewed putchars and getchars functions.
+
+And finally, we studied the arrays.
+
+So, are there any questions about these arguments?
+
+******************************
+
+Today...
+
+******************************
+
+This is the usual disclaimer. Try to write the code by yourself. Do not cheat on the web, bla bla bla... and if you take a piece of code from the web, remember to understand why the code works properly.
+Nothing special.
+
+******************************
+
+First argument: Typedef
+Typedef is a keyword. It is used to assign alternative names to existing datatypes.
+It is very important to understand that TYPEDEF does not create any new type. it gives just an alternative name to the datatype.
+
+First thing first, what is a datatype?
+well, at this point, we should all know what a datatype is... by the way, if you google it, you will see that Data type determines the type of data a variable will hold.
+
+I am going to make it simple. A datatype is the type of a variable. For example, int, float, char, double, and so on so forth, these are all datatypes. and these are called basic types or primary types. There are also derived types.
+For example, we have learnt derived types such as arrays, pointers or we may have structures. These are another example of data type. but we will see the structures in a few minutes.
+
+I don't want to go deeper explaining the datatype.
+
+******************************
+
+While, if I go back to the typedef. How is it declared?
+The syntax for typedef is: typedef followed by the the existing datatype followed by the alias name.
+
+In the example below, in line 2, the datatype is unsigned long. The alias name is ulong.
+
+******************************
+
+Now, the quesitons are: 
+- What is the meaning of typedef?
+- Why is important?
+
+The meaning is that everytime the pre-compiler (in runtime) finds ulong in our program, it substitutes ulong with the string unsigned long inside our piece of code. basically, the compiler treats ulong like a classic unsigned long declaration.
+
+******************************
+
+The other pending question is WHY is (it) important?
+Typedef provides a level of abstraction away from the actual types being used, allowing the programmer, to focus more on the concept of just what a variable should mean. This makes it easier to write clean code, but it also makes it far easier to modify your code.
+
+Actually, in this case using typedef doesn't help that much.
+It is generally a good practice in C++ rather than C.
+
+By the way, a case in which TYPEDEF is really useful comes with structures. 
+
+******************************
+
+This is an example with structure. 
+For the moment just forget what struct is. Lets focus on typedef and its elements.
+Exactly as before, we have typedef, followed by the type, which indeed is STRUCT then its alias, namely book.
+The idea is the same as before. Every time we call book, it is indeed a call to the struct object called books.
+
+so, what is a structure. At this point I cannot postpone anymore to explan a struct.
+
+******************************
+
+A structure allows to combine data items of different kinds.
+
+Differently from typedef, struct defines a new data type.
+
+To define a structure, we use the struct statement, number 1, followed by the tag, number 2, then between curly brackets we have the variable definition. Finally there is a semicolon. Before the semicolon, we can specify one or more variables but it is optional, number 3.
+
+Struct is used to represent a record. Suppose you want to keep track of your books in a library. You might want to track the following attributes about each book. The title, author, subject and ID.
+
+******************************
+
+We declare Book1 and book2 of type Book. It is similar to Java when we instantiate an object.
+At this point we have declared two new variables of type books.
+
+******************************
+
+To access any member of a structure, we use the member access operator period (.) 
+I think it's better to show you the code.
+We have book1.title and book1.book_id
+
+Please note that we used strcpy to assign a string to book1. Because in C strings are treated using pointers. So, there is a pointer that points to the beginning of the string. Hence, we cannot assign a string to a variable using the assignment operator, but wee need to use strcpy.
+
+In C, the strcpy function copies the string pointed to by my string into the object pointed to by book1.title
+
+So, the presentation is mostly finished.
+
+I know you guys don't care that much about my presentation, but I am sure that you will enjoy the next slide.
+
+******************************
+
+As I promised you, this is the info about your checkpoints.
+
+******************************
+
+Next lesson I am going to give you an overview of functions and pointer.

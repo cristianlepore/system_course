@@ -1,8 +1,7 @@
 - explain what putchar is
-- can putchar write more than character or one single char?
+- can putchar write more than character or just a single char? one carachter passed as pointer.
 - explain the function getchar
 - does getchar return an integer or a string/char? It returns an integer
-- which is more efficient? scanf or getchar/putchar?
 - what is the disadvantage of getchar? The input keeps buffering till enter is pressed.
 - can getchar read more than one character at a time? No, it can't
 - tell me difference between scanf and getchar

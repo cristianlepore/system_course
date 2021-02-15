@@ -143,7 +143,7 @@ Dichiaro un array int a[] = {1, 6, 9, 3}; e non mi preoccupo di dire quanto è g
 C'è una differenza tra gli array in Java e gli array in C. In Java gli array sono essenzialmente degli ogetti. Per esempio posso in Java posso scrivere il nome dell'array seguita dal punto e qualcosa per accedere all'elemento dell'array.
 
 In C questo non si può fare. Quindi se vogliamo passare un array come parametro di una funzione, dobbiamo anche passargli un secondo parametro che mi dice quanto è lungo l'array.
-Perchè devo specificare la lunghezza di un arrey quando passo l'array come parametro di una funzione?
+Perchè devo specificare la lunghezza di un array quando passo l'array come parametro di una funzione?
 Qui entrano in gioco i puntatori. Normalmente un puntatore viene interpretato come l'indirizzo di una cella di memoria a partire dalla quale viene memorizzata una variabile.
 Dichiaro un puntatore cosi: int *p;
 Però * assume significati diversi a seconda che io stia dichiarando un puntatore o usandolo.
