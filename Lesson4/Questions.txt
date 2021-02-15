@@ -1,9 +1,13 @@
 - explain what putchar is
-- can putchar write more than character or just a single char? one carachter passed as pointer.
+- can putchar write more than character or just a single char? 
+    one character passed as pointer.
 - explain the function getchar
-- does getchar return an integer or a string/char? It returns an integer
-- what is the disadvantage of getchar? The input keeps buffering till enter is pressed.
-- can getchar read more than one character at a time? No, it can't
+- does getchar return an integer or a string/char? 
+    It returns an integer
+- what is the disadvantage of getchar? 
+    The input keeps buffering till enter is pressed.
+- can getchar read more than one character at a time? 
+    No, it can't
 - tell me difference between scanf and getchar
 - What is a potential problem in this example??
     printf("Enter an integer: ");
@@ -11,12 +15,14 @@
     printf("Enter a command: ");
     command = getchar();
 
-    N.B. --> The scanf leave behind any characters that weren't consumed uring the reading of i. Hence, getchar will fetch the first leftover character.
+    N.B. --> The scanf leave behind any characters that weren't consumed during the reading of i. Hence, getchar will fetch the first leftover character.
 
 - Does C has boolean type?
 - How can I declare a boolean in C?
-- How many ways do you know to define a bool? #define and typedef
-- What is an advantage of defining a typedef? You can easily redefine the type by simply changing the fist line.
+- How many ways do you know to define a bool? 
+    #define and typedef
+- What is an advantage of defining a typedef? 
+    You can easily redefine the type by simply changing the fist line.
 - Using typedef is also good for portability.
     e.g. int or char can be defined differently in several machines. Transporting the program to a machine with shorter integers, we will change the type definition. changing the definition may affect the way variables are used.
 - The same problem as above does not apply to Java. Why?
@@ -53,4 +59,3 @@ Arrays
 - What is the meaning of srand?
 - What's the meaning of the time function?
 - What's the meaning of this instruction? srand(time(NULL));
-- 
