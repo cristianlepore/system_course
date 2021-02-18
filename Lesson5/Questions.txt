@@ -1,0 +1,15 @@
+Functions
+
+- What is a function? 
+    It is a series of statements that have been grouped together and given a name.
+- What are the advantages of functions?
+    A program can be diveded into small pieces easier to understand
+    avoid duplicating code
+    a function can be reused for other programs
+- How can a function return nothing? How can I declare a void?
+    void function_name(){printf("print something");}
+- Do you need to use the keyword void between parenthesis if there are no parameters in the function?
+    ex: int function(void){return 1;}
+    The answer is yes.
+- General form of a function?
+- 
