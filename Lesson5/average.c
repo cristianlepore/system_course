@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-double average(double a, double b){
+double average(int a, double b){
     return (a + b) / 2; 
 }
 
