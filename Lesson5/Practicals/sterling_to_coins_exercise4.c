@@ -2,34 +2,44 @@
 
 #define N 4
 
-int * pound_to_coins(int, int [], int);
+/* Functions' declaration */
+int twenty(int);
+int ten(int amount);
+int five();
 
 int main(){
-    int a[N], amount, *p;
+    int amount, twenties, tens, fives, ones;
 
     printf("Enter a pound amount: ");
     scanf("%d", &amount);
 
-    p = pound_to_coins(N, a, amount);
-
     printf("\n");
+    
+    twenties = twenty(amount);
+    printf("£20 notes: %d\n", twenties );
 
-    printf("£20 notes: %d\n", *p++);
-    printf("£10 notes: %d\n", *p++);
-    printf("£5 notes: %d\n", *p++);
-    printf("£1 notes: %d\n", *p);
+    amount = amount - (20 * twenties);  /* Repeted pattern */
+    tens = ten(amount);
+    printf("£10 notes: %d\n", tens );
+
+    amount = amount - (10 * tens);      /* Repeted pattern */
+    fives = five(amount);
+    printf("£5 notes: %d\n", fives );
+    
+    ones = amount - (5 * fives);        /* Repeted pattern */
+    printf("£1 notes: %d\n", ones );
 
     return 0;
 }
 
-int * pound_to_coins(int len, int a[], int amount){
-    int reduced_amount = amount;
-    int array[] = {20, 10, 5, 1};
+int twenty(int amount){
+    return amount / 20;
+}
 
-    for(int i=0; i<len; i++){
-        a[i] = reduced_amount / array[i];
-        reduced_amount = reduced_amount - (array[i] * a[i]);
-    }
+int ten(int amount){
+    return amount / 10;
+}
 
-    return a;
+int five(int amount){
+    return amount / 5;
 }

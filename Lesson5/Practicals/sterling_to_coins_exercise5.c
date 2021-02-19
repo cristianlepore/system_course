@@ -23,13 +23,17 @@ int main(){
 }
 
 int * pound_to_coins(int len, int a[], int amount){
-    int reduced_amount = amount;
-    int array[] = {20, 10, 5, 1};
+    int notes = 20, i = 0;
 
-    for(int i=0; i<len; i++){
-        a[i] = reduced_amount / array[i];
-        reduced_amount = reduced_amount - (array[i] * a[i]);
-    }
+    do {
+        a[i] = amount / notes;
+        amount = amount - (notes * a[i]);
+        notes /= 2;
+        i++;
+    }while(notes >=5);
+
+    /* ones */
+    a[i] = amount - (notes * a[i]);
 
     return a;
 }
