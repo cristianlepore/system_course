@@ -1,120 +1,141 @@
-Welcome everbody, welcome to this fifth session of the lab activity.
+
+Welcome everbody, welcome to this fifth session of the practicals.
 
 ******************************
 
-As usual our plan for today includes a 10-15 minutes presentation, then about 10 minutes for questions and answers and then the remaining 35 minutes is about exercises & checkpoints. Please be ready to share your screen because it is important that we are all able to compile our code and it's important that we have a clear understanding of the topic studied so far.
+As usual, the plan for today consists on a 15 minutes presentation, then about 10 minutes for questions and answers and 35 minutes for checkpoints.
 
 ******************************
 
-A brief summary from week 2 and week 3. 
-In week two, we studied the Main function. We presented the two ways of declaring the main function. The clear main function and the complex form which uses argc and argv as arguments. Argc stands for argument counter and Argv is an array of pointers.
+A brief summary from the previous weeks.
+ 
+Week 2, we saw the basic of C programming language.
 
-We studied how we can compile a simple Hello World program.
+In week 3, we studied further input output functions such as putchar and getchar, and the arrays.
 
-We reviewed the practicals watching closely at some examples.
+Finally, the last week we saw typedef and structures.
 
-Finally, we spent a few time describing the I/O standard with printf and scanf.
+Are there any question about the previous arguments?
 
-In week 3, we reviewed putchar and getchar functions.
+...
 
-And finally, we studied the arrays.
-
-So, are there any questions about these arguments?
-
-******************************
-
-For today I would like to talk about the typedef declaration and the meaning of the keyword struct. 
-How do we declare a struct and why it is important.
+For today I would like to review together with you the functions.
 
 ******************************
 
-This is the usual disclaimer. Try to write the code by yourself. Do not cheat on the web, bla bla bla... and if you take a piece of code from the web, remember to understand why the code works properly.
-Nothing special.
+These are in particular the things that I would like to discuss with you.
+- defining a function
+- declaring a function
+- calling
+- and passing arguments
 
 ******************************
 
-First argument: Typedef
-Typedef is a keyword. It is used to assign alternative names to existing datatypes.
-It is very important to understand that TYPEDEF does not create any new type. it just gives an alternative name to the datatype.
+A function is a group of statements that together perform a task. 
 
-First thing first, what is a datatype?
-well, at this point, we should all know what a datatype is... by the way, a Data type determines the type of data a variable will hold.
+Every program has at least one function, which is main(), and we can define additional functions.
 
-I am going to make it simple. A datatype is the type of a variable. For example, int, float, char, double, and so on so forth, these are all datatypes. and these are called basic types or primary types. There are also derived types.
-For example, we have learnt derived types such as arrays, pointers or we may have structures. These are another example of data type. but we will see the structures in a few minutes.
+We can divide up our code into separate functions. The way we divide our code among different functions represents a logical split of our program into sub-routine where each function performs a particular task.
 
-I don't want to go deeper explaining the datatype.
+The C standard provides several built-in functions that your program can call. For example, printf() which has been declared into the standard library, so we do not need to add its declaration.
 
-******************************
+But if the function is not part of the standard library, we need to declare it. For example, here I have declared two functions that compute the maximum and the average between two values.
 
-While, if I go back to the typedef. How is it declared?
-The syntax for typedef is: typedef followed by the the existing datatype followed by the alias name.
-
-In the example below, in line 2, the datatype is unsigned long. The alias name is ulong.
-
-Now, the quesitons are: 
-- What is the meaning of typedef?
-- Why is important?
+We will go more in details in a moment.
 
 ******************************
 
-The meaning is that everytime the pre-compiler (in runtime) finds ulong in our program, it substitutes ulong with the string unsigned long inside our piece of code. basically, the compiler treats ulong like a classic unsigned long declaration of a variable.
+Defining a function
+
+This is a general form of a function.
+
+Each function has a header and a body. Line 2 represents the header, the rest is the body.
+
+The header contains the return type, the function name and the parameters.
+
+A function may return an integer, a double, a float. Some functions perform the desired operations without returning a value. In this case, the return type is the keyword void.
+
+Function Name − is the actual name of the function.
+
+Parameters − A parameter is like a placeholder and actually, it is optional.
+
+Function Body − The function body contains a collection of statements that define what the function does.
+
+Here, I have a function called my_function that takes one parameter and returns an integer value.
 
 ******************************
 
-The other pending question is WHY is (it) important?
-Typedef provides a level of abstraction away from the actual types being used, allowing the programmer, to focus more on the concept of just what a variable should mean. This makes it easier to write clean code, but it also makes it far easier to modify your code.
+Position of a function in our code.
 
-Actually, in this case using typedef doesn't help that much. It is used just to save time.
+We can define a function almost everywhere.
 
-By the way, a case in which TYPEDEF is really useful comes with structures. 
+I can declare a function before the main like in this case. We have two functions, max and avarage both declared before the main.
 
-******************************
+That is ok, because the compiler goes down step by step starting from line 1, it executes the main and if the compiler gets a function call (into the main), the compiler will jump to execute that function. So, it will go back executing the function.
 
-This is an example with structure. 
-For the moment just forget what the struct means. Lets focus on typedef and its elements.
-Exactly as we did before, we have typedef, followed by the type, which indeed is STRUCT then its alias, namely book.
-The idea is the same as before. Every time we call book, it is indeed a call to the structure object called books.
-
-Here we see that there are the three elements that we saw before.
-typedef, the type and the new name
-
-so, what is a structure?
+But what happen if we do not define the function before the main?
 
 ******************************
 
-A structure allows to combine data items of different kinds.
+well, here's an example. You can see that I have moved the two functions after main.
+This raises an error on the right hand side.
 
-Differently from typedef, struct defines a new data type.
-
-To define a structure, we use the struct statement, number 1, followed by the tag, number 2, then between curly brackets we have the variable definition. Finally there is a semicolon. Before the semicolon, we can specify one or more variables but it is optional, number 3.
-
-Struct is used to represent a record. Suppose you want to keep track of your books in a library. You might want to track the following attributes about each book. The title, author, subject and ID.
-
-******************************
-
-Here, is an example of struct in action.
-We declare Book1 and book2 to be type Book. This is similar to Java when we create an instance of an object.
-At this point we have declared two new variables of type books, namely book1 and book2.
+Why?
+Because in the right side, the compiler has no clue about where the function has been declared.
+As I said, the compiler goes down step by step, enters the main function and if it finds a function call, the compiler will start looking for this function into the system library without any result and we will get an error.
 
 ******************************
 
-To access any member of a structure, we use the member access operator period (.) 
-I think it's better to show you the code.
-We have book1.title and book1.book_id
+To avoid bad behaviours, we need to add the function declaration before main, as I did here in line 1 and 2.
 
-Please note that we used strcpy to assign a string to book1. Because in C a string is treated as a pointer of chars. So, there is a pointer that points to the beginning of the string. Hence, we cannot assign a string to a variable using the assignment operator, but we need to use strcpy. and to import strcpy we need to include in the second line string.h
+This two lines suggest to the compiler that max and average have been defined somewhere into our program. These functions are not in a system library.
 
-The strcpy copies the string pointed to by "my first book" into the object pointed to by book1.title
-
-So, you can access elements using the dot and assign them a new value.
-
-I know you guys don't care that much about my presentation, but I am sure that you will enjoy the next slide.
+So, how do we declare a function?
 
 ******************************
 
-As I promised, this is the info about your checkpoints.
+Declaring a function
+
+A function declaration contains a name, return type, and parameters.
+
+Actually, parameter names are not so important and only their type is required, so the second case (showed below) is also a valid declaration. So we dropped out parameter1 and parameter2 from the declaration.
 
 ******************************
 
-Next lesson I am going to give you an overview of functions and pointer.
+This is an example of a complete program that compute the maximum value between two numbers using a function.
+
+Starting from the top, we see the function declaration.
+
+The main function where we call the function max and in line 18 there is the function definition.
+
+How do we call this function?
+To call a function, we simply need to pass the required parameters along with the function name, and if the function returns a value, then we can store the returned value.
+
+We can go in a bit more details: when a program calls a function, the program control is transferred to the called function, in our case it is transferred to the max function. The max function performs the task and when its return statement is executed, it returns the program control back to the main program.
+
+******************************
+
+Here's an example of how to pass arguments to a function.
+
+I have declared two variables A and B in line 9 and 10, then we can simply pass them to a function. It is realy easy, there is nothing complicated in here. It is clear from the code.
+
+There are two ways in which arguments can be passed to a function. Called by value and called by reference.
+
+By default, C uses call by value to pass arguments. 
+What does it mean?
+Called by value means means the code within a function cannot alter the arguments used to call the function.
+
+Translated --> variables num1 and num2 have a scope which is inside the function sum.
+while variables a, b, and result have a scope inside the main function.
+
+When I pass an argument by value, what I am doing in memory is to copy the value of a and b into a new memory location num1 and num2 which will be overwritten as soon as the function ends.
+
+******************************
+
+When we work with arrays though, we will pass it as a reference.
+That means, we do not copy the array into a new memory location, instead we only pass a reference to the array. It is a pointer to the array.
+Hence, every time we modify the array into the function, we overwrite the actual elements of the array that the main function is referring to.
+
+******************************
+
+Next lesson I am going to give you an overview of pointers.
