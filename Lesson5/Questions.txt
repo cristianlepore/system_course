@@ -1,43 +1,49 @@
 Functions
 
-- What is a function? 
+- Define what is a function? 
     It is a series of statements that have been grouped together and given a name.
 - What are the advantages of functions?
-    A program can be diveded into small pieces easier to understand
-    avoid duplicating code
-    a function can be reused for other programs
-- How can a function return nothing? How can I declare a void?
+    1. A program can be diveded into small pieces easier to understand
+    2. avoid duplicating code
+    3. a function can be reused for other programs
+- How can a function return nothing?
+    using the keyword void
     void function_name(){printf("print something");}
-- Do you need to use the keyword void between parenthesis if there are no parameters in the function?
-    ex: int function(void){return 1;}
-    The answer is yes.
-- General form of a function?
+- Describe the general structure of a function?
 - Does a function return an array?
     no, it does not
-- Local variables declared in the body of a function are local variables, and can't be seen or modified by other functions.
+    a function cannot return an array but only a pointer to the array object
+- What is a local variables declared in the body of a function? Can this local variable being seen or modified by other functions?
 - How can I call a function? give me an example.
-- What is a difference between functional and procedural language?
-    A function does not have a state. It computes a result from the parameters and no other variable is permanently altered by the execution of the function.
-    Procedural lanuages, such as C and Java, functions may alter global variables. This may induce a not so safe programming style because every time I modify a variable, this has impliction on the rest of the programme.
+- What is a global variable?
+- What is aprocedural language? Can you give me an example of procedural language?
+    Procedural lanuages: such as C and Java, functions may alter global variables. This may induce a not so safe programming style because every time I modify a variable, this has impliction on the rest of the programme.
 - Can I declare a function after the main function?
     yes, but this is not usually very safe. The declaration precedes the main and the definition of the function is after the main.
-- The function prototype does not have to specify the names of the function's parameters, as long as their types are present.
+- The function prototype does it need to specify the names of the function's parameters, as long as their types are present?
+    no, it does not
     ex: double average(double, double);
 - Does a function return an array? How?
-    not, they can't
+    not, they can't. I migh be write the result into a global variable
 - If passing a varible to a function does not alter the value of the varible itself. How can I alter a variable?
-    using a pointer
-- When I use an array as argument, the length of the array can be left unspecified
+    using a pointer or global variable
+- When I use an array as argument, does the length of the array need to be specified?
+    yes
     ex: int f(int a[]){} /* no length specified */
-- The length of the array in a function must be specified as additional argument
-- If the length argument exeed the array lenght, we obtain unpredictable behaviour
-- If we pass an array and we change elements into the array, this change will be permanent.
-- If we pass a multidimentional array, the second dimention is mandatory
+    The length of the array in a function must be specified as additional argument
+- What happen if the length of the arguent exceed the array length?
+    we obtain an unpredictable behaviour
+- If we pass an array and then we change the array's elements into the function, will this change be permanent?
+    yes, because arrays are called as reference
+- when we pass a multidimentional array to a function, do I need to specify the second dimention of the array?
+    Yes, it is always mandatory
 - The standard C99 allows us to pass arrays in this way.
-    int sum_array(int n, int a[n]){}
-    Here the order is relevant
+int sum_array(int n, int a[n]){}
+Can I switch the order??
+    No, I the order is relevant
 - What is the meaning of the word STATIC when used into an array and the array itself is passed as parameter to a function?
     indicates that the length of the array is at least ....
     ex: int sum_array(int a[static 3], int n){}
-    means that the array a has at least length 3
-- Instead of return we can use the exit function
+    it means that the array a has at least length 3
+- What statement can we use instead of the return statement?
+    Instead of return we can use the exit function

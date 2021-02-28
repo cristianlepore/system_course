@@ -15,29 +15,31 @@ In week 3, we studied further input output functions such as putchar and getchar
 
 Finally, the last week we saw typedef and structures.
 
-Are there any question about the previous arguments?
+Are there any questions about these previous arguments?
 
 ...
 
-For today I would like to review together with you the functions.
+For today I would like to review together with you the functions. Just one topic, but it is pretty big though.
 
 ******************************
 
-These are in particular the things that I would like to discuss with you.
-- defining a function
-- declaring a function
-- calling
-- and passing arguments
+In particular, we are going to discuss about these four things:
+- how to define a function
+- how to declare a function
+- calling a function
+- and passing arguments to a function
+
+This is of course not exhaustive, but you find a complete reviews of functions in your last lecture online.
 
 ******************************
 
 A function is a group of statements that together perform a task. 
 
-Every program has at least one function, which is main(), and we can define additional functions.
+Every program has at least one function, which is indeed the main() function, and we can also define further functions.
 
-We can divide up our code into separate functions. The way we divide our code among different functions represents a logical split of our program into sub-routine where each function performs a particular task.
+for example, we can divide up our code into separate pieces. The way we divide our code represents a logical split of our program into sub-routine where each function performs a particular task.
 
-The C standard provides several built-in functions that your program can call. For example, printf() which has been declared into the standard library, so we do not need to add its declaration.
+The C standard provides several built-in functions that you can call. For example, printf() is a built-in function which has been declared into the standard library, so we do not need to add its declaration.
 
 But if the function is not part of the standard library, we need to declare it. For example, here I have declared two functions that compute the maximum and the average between two values.
 
@@ -45,19 +47,19 @@ We will go more in details in a moment.
 
 ******************************
 
-Defining a function
+How we can define a function?
 
-This is a general form of a function.
+well, this is a way.
 
-Each function has a header and a body. Line 2 represents the header, the rest is the body.
+Each function has a header and a body. Line 2 represents the header, the remaining part is the body.
 
 The header contains the return type, the function name and the parameters.
 
-A function may return an integer, a double, a float. Some functions perform the desired operations without returning a value. In this case, the return type is the keyword void.
+returning type - A function may return an integer, a double, a float. Some functions perform the desired operations without returning any value. In this case, the return type is the keyword void.
 
-Function Name − is the actual name of the function.
+Function Name − is the actual name of the function. Ususally we use lowercase letters and underscore to separate words
 
-Parameters − A parameter is like a placeholder and actually, it is optional.
+Parameters − A parameter is like a placeholder and actually, it is optional. We can have functions without any parameter.
 
 Function Body − The function body contains a collection of statements that define what the function does.
 
@@ -71,7 +73,7 @@ We can define a function almost everywhere.
 
 I can declare a function before the main like in this case. We have two functions, max and avarage both declared before the main.
 
-That is ok, because the compiler goes down step by step starting from line 1, it executes the main and if the compiler gets a function call (into the main), the compiler will jump to execute that function. So, it will go back executing the function.
+That is ok, because the compiler goes down step by step starting from line 1, it executes the main and if the compiler gets a function call (into the main), the compiler will jump to execute that function. So, it will go back executing the max or average.
 
 But what happen if we do not define the function before the main?
 
@@ -81,16 +83,18 @@ well, here's an example. You can see that I have moved the two functions after m
 This raises an error on the right hand side.
 
 Why?
-Because in the right side, the compiler has no clue about where the function has been declared.
-As I said, the compiler goes down step by step, enters the main function and if it finds a function call, the compiler will start looking for this function into the system library without any result and we will get an error.
+Because in the right side, the compiler has no clue about whether the function has been declared.
+As I said, the compiler goes down step by step, enters the main function and if it finds a function call, the compiler will start looking for this function into the system library rather than other functions. 
+
+without getting any result, this will raise an error.
 
 ******************************
 
-To avoid bad behaviours, we need to add the function declaration before main, as I did here in line 1 and 2.
+To avoid such a behaviour, we need to add the function declaration before main, as I did here in line 1 and 2.
 
-This two lines suggest to the compiler that max and average have been defined somewhere into our program. These functions are not in a system library.
+This two lines suggest to the compiler that max and average have been defined somewhere into our program.
 
-So, how do we declare a function?
+So the question now is how do we declare these functions? What is their structure...
 
 ******************************
 
@@ -98,32 +102,38 @@ Declaring a function
 
 A function declaration contains a name, return type, and parameters.
 
-Actually, parameter names are not so important and only their type is required, so the second case (showed below) is also a valid declaration. So we dropped out parameter1 and parameter2 from the declaration.
+Actually, the name of parameters are not so important but only their type is required, so the second case (showed below) is also a valid declaration. So I have dropped out parameter1 and parameter2 from the declaration.
+
+so as simple as int my_function(int, int);
 
 ******************************
 
-This is an example of a complete program that compute the maximum value between two numbers using a function.
+Calling a function
 
-Starting from the top, we see the function declaration.
+to describe how to call a function is better to see an example of a complete program. This program computes the maximum between two values using a function.
 
-The main function where we call the function max and in line 18 there is the function definition.
+from top to bottom, we see the function declaration.
+
+The main function and in line 18 the function definition.
 
 How do we call this function?
-To call a function, we simply need to pass the required parameters along with the function name, and if the function returns a value, then we can store the returned value.
+Inside the main, we need to pass the required parameters along with the function name, and if the function returns a value, then we can store the returned value.
 
-We can go in a bit more details: when a program calls a function, the program control is transferred to the called function, in our case it is transferred to the max function. The max function performs the task and when its return statement is executed, it returns the program control back to the main program.
+be careful, because the function should return the same type of the variable that has been declare.
+
+We can go in more details: when a program calls a function, the program control is transferred to the called function, in our case the control is shifted to the max function. The max function performs the task and when its return statement is executed, the function returns the program control back to the main program.
 
 ******************************
 
 Here's an example of how to pass arguments to a function.
 
-I have declared two variables A and B in line 9 and 10, then we can simply pass them to a function. It is realy easy, there is nothing complicated in here. It is clear from the code.
+I have declared two variables A and B in line 9 and 10, having value 100 and 200. Then we can simply pass these values to a function as I did in line 13.
 
 There are two ways in which arguments can be passed to a function. Called by value and called by reference.
 
 By default, C uses call by value to pass arguments. 
 What does it mean?
-Called by value means means the code within a function cannot alter the arguments used to call the function.
+Called by value means the code within a function cannot alter the arguments used to call the function.
 
 Translated --> variables num1 and num2 have a scope which is inside the function sum.
 while variables a, b, and result have a scope inside the main function.
@@ -133,7 +143,8 @@ When I pass an argument by value, what I am doing in memory is to copy the value
 ******************************
 
 When we work with arrays though, we will pass it as a reference.
-That means, we do not copy the array into a new memory location, instead we only pass a reference to the array. It is a pointer to the array.
+That means, we do not copy the array into a new memory location, instead we only pass a reference to the array. A reference is a pointer to the array.
+
 Hence, every time we modify the array into the function, we overwrite the actual elements of the array that the main function is referring to.
 
 ******************************
