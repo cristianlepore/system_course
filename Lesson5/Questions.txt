@@ -16,7 +16,7 @@ Functions
 - What is a local variables declared in the body of a function? Can this local variable being seen or modified by other functions?
 - How can I call a function? give me an example.
 - What is a global variable?
-- What is aprocedural language? Can you give me an example of procedural language?
+- What is a procedural language? Can you give me an example of procedural language?
     Procedural lanuages: such as C and Java, functions may alter global variables. This may induce a not so safe programming style because every time I modify a variable, this has impliction on the rest of the programme.
 - Can I declare a function after the main function?
     yes, but this is not usually very safe. The declaration precedes the main and the definition of the function is after the main.
