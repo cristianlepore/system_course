@@ -1,0 +1,24 @@
+- What is a pointer?
+- How do I declare a pointer of type integer?
+    int *p;
+    p is a pointer variable capable of pointing to object of type int
+- Can I declare a pointer along with the declaration of other variables?
+    yes
+    ex:
+        int i, j, a[10], *p, *q;
+- double *p --> point only to object of type double
+- Which operator are specifically used with pointers?
+    & and *
+- What is the indirection operator? *
+    Once the pointer points to an object, we can use * operator to access what is stored in the object.
+- What is the meaning of this statement? j = *&i;
+    & produces a pointer while applying * to the pointer takes us back to the original variable.
+    j = *&i; --> same as j = i;
+- Do we need to always initialize a pointer?
+    yes, otherwise we get an error.
+- Can we assign a pointer to another pointer?
+    yes, but there is a constraint
+    the two pointers must be of the same type
+- If I have two pointers *p, *q What is the difference between p = q and *p = *q
+- How can I pass an agument that must not be modify to a function?
+    using const
