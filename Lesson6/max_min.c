@@ -24,6 +24,8 @@ int main()
 
 void max_min(int arr[], int size, int *big, int *small)
 {
+    *big = *small = arr[0];
+
     for (int i = 0; i < size; i++)
     {
         if (*big < arr[i])

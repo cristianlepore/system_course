@@ -22,6 +22,8 @@ int main()
 
 void sum_average(int arr[], int size, int *p_sum, int *p_avg)
 {
+    *p_sum = 0;
+
     for (int i = 0; i < size; i++)
     {
         *p_sum += arr[i];

@@ -2,12 +2,11 @@
 
 int main()
 {
-    int num, *ptr;
-    num = 10;
+    int num = 10, *ptr;
     ptr = &num;
 
-    printf("value: \t %d\n", num);
-    printf("address: %p\n", &num);
+    printf("value of num: %d\n", num);
+    printf("address of num: %p\n", &num);
 
     printf("value pointed by ptr: %d\n", *ptr);
     printf("address of ptr: %p\n", &ptr);

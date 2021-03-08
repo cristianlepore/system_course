@@ -1,10 +1,11 @@
 #include <stdio.h>
 
+/* definition of swap func */
 void swap(int *, int *);
 
 int main()
 {
-    /*declare two numbers */
+    /* declare two numbers */
     int num1, num2, *ptr1, *ptr2;
     ptr1 = &num1;
     ptr2 = &num2;
