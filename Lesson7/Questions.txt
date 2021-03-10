@@ -1,0 +1,13 @@
+Declare an array a[] and a pointer *pointer
+make the pointer point to the first element of a
+assigning a value to the pointer I am assigning a value to a[0]
+
+pointer arithmetic --> p+1 to point to the next element of the array
+
+What operation can be done with pointer?
+    - adding an integer
+    - subtracting an integer
+    - subtracting two pointers
+
+What is the result of subtracting two pointers?
+    The result is the distance between the pointers.
