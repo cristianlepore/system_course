@@ -1,14 +1,13 @@
 #include <stdio.h>
 #define N 10
 
-int main(){
-    int a[N], *p, *q, i;
-    /* I can also subtract two pointers */
-    p = &a[0];
-    q = &a[5];
+int main()
+{
+    int a[N] = {0}, *p;
 
-    i = q - p; /* This is 5 */
+    /* I can use the array a as a pointer */
+    *a = 6;
+    *(a + 2) = 10; /* stores 10 in a[2] */
 
-    /* and I can compare operators */
-    p <= q  /* the result is 1 or 0 */
+    return 0;
 }

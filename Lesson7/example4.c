@@ -1,19 +1,18 @@
 #include <stdio.h>
 #define N 10
 
-int main(){
-    int a[N], sum, *p;
-    
-    /* I can use the array a as a pointer */
-    *a = 6;
-    *(a + 1) = 10; /* stores 10 in a[1] */
+int main()
+{
+    int a[N], *p, *q, i;
+    /* I can also subtract two pointers */
+    p = &a[0];
+    q = &a[3];
 
-    /* So I can use it in a loop */
-    for(p = a; p < a+N; p++)
-        sum += *p;
+    i = q - p; /* This is 5 */
+    printf("%d\n", i);
 
-    /* This is wrong */
-    /* We cannot use a again, we need to redefine */   
-    while(*a != 0)
-        a++;
+    /* and I can compare operators */
+    p <= q; /* the result is 1 or 0 for TRUE or FALSE */
+
+    return 0;
 }

@@ -1,0 +1,19 @@
+Write a C program to search an element in array using pointers.
+
+We can assume that the array as:
+{12, 23, 4, 56, 78, 0}
+
+***************************
+** Example1 from console **
+***************************
+>_ Input element to search: 23
+OUTPUT
+>_ 23 exists in array
+
+
+***************************
+** Example2 from console **
+***************************
+>_ Input element to search: 15
+OUTPUT
+>_ 15 does not exist in array

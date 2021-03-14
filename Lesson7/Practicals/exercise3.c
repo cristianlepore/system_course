@@ -32,6 +32,4 @@ void max_min(int arr[], int *p, int *q)
             *p = *i;
         else if (*i < *q)
             *q = *i;
-
-    return 0;
 }
