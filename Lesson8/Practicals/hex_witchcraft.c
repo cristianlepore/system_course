@@ -42,6 +42,11 @@ int main(int argc, char *argv[])
         }
         pos++, i++;
     }
+    printf("\t");
+    while ((ch = fgetc(fp)) != EOF)
+    {
+        printf("%c", ch);
+    }
     printf("\n\n");
 
     fclose(f);
