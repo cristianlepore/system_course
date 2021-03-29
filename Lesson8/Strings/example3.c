@@ -15,7 +15,7 @@ int main()
     strcpy(char *s1, const char *s2); /* it copies s2 in s1 and returns s1 */
     /* safer way is to use strncpy */
     /* strncpy will leave s1 without terminating null character if the length of s2 is greater than or equal to the size of the s1 array */
-    strnpcy(s1, s2, sizeof(s1) - 1); /* because the last one I want to store the last char termination */
+    strnpcy(s1, s2, strlen(s1)); /* because the last one I want to store the last char termination */
 
     /* example */
     strcpy(str, "abc");

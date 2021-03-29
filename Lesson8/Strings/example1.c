@@ -3,7 +3,7 @@
 int main()
 {
     /* We have string constants and string variables. */
-    /* String constants do not change. So we cannot assign a ne value to these strings. */
+    /* String constants do not change. So we cannot assign a new value to these strings. */
 
     /* There is a special character to mark the end of the string \0 */
 
