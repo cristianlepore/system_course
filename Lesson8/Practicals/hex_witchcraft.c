@@ -20,12 +20,14 @@ int main(int argc, char *argv[])
     ch = fgetc(fp);
     while ((el = fgetc(f)) != EOF)
     {
+        // Print Bytes
         if (i % 10 != 0)
         {
             printf("%.2x ", (unsigned)el);
             if (i % 10 == 9)
             {
                 printf("\t ");
+                // Print Characters
                 for (int j = 0; j < 10; j++, ch = fgetc(fp))
                 {
                     if (ch == '\n')
@@ -34,6 +36,7 @@ int main(int argc, char *argv[])
                 }
             }
         }
+        // Print offset
         else
         {
             printf("\n");
@@ -42,14 +45,25 @@ int main(int argc, char *argv[])
         }
         pos++, i++;
     }
+
+    // Complete line feed
+    while ((pos % 10) != 0)
+    {
+        printf("   ");
+        pos++;
+    }
     printf("\t");
-    while ((ch = fgetc(fp)) != EOF)
+
+    // Print the last line
+    printf(" ");
+    do
     {
         printf("%c", ch);
-    }
+    } while ((ch = fgetc(fp)) != EOF);
     printf("\n\n");
 
     fclose(f);
+    fclose(fp);
 
     return 0;
 }
