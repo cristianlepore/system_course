@@ -16,7 +16,7 @@ FILE *fp; /* pointer to the beginning of the file */
 /* Text files have carriage return and line feed */
 
 /* accessing a stream is done through a file pointer */
-/* FILE i declared in <stdio.h> */
+/* FILE is declared in <stdio.h> */
 FILE *fopen(const char *filename, const char *mode);
 /* This returns a pointer to the file opened */
 
